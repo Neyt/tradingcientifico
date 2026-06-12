@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplicación recibida — Trading Científico</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    .thanks {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .thanks__bg {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(180deg, rgba(7,9,13,0.88), rgba(7,9,13,0.96)),
+        url("assets/img/bg-ciudad.jpg") center 40% / cover no-repeat;
+    }
+    .thanks > * { position: relative; }
+    .thanks img.logo { height: 56px; width: auto; margin-bottom: 40px; }
+    .thanks h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); margin-bottom: 20px; }
+    .thanks p { color: var(--muted); max-width: 52ch; font-size: 1.08rem; margin-bottom: 12px; }
+    .thanks .mono.small { font-size: 0.75rem; color: var(--gold); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 26px; }
+    .thanks .btn { margin-top: 28px; }
+  </style>
+</head>
+<body>
+  <main class="thanks">
+    <div class="thanks__bg" aria-hidden="true"></div>
+    <img class="logo" src="assets/img/logo.png" alt="Trading Científico">
+    <p class="mono small">// Aplicación recibida</p>
+    <h1>Bien hecho. <em>Ya está en nuestras manos.</em></h1>
+    <p>Revisamos cada aplicación personalmente. Te responderemos a tu correo en un máximo de
+    <strong>24–48 horas</strong> para agendar tu llamada de diagnóstico.</p>
+    <p>Mientras tanto, revisa tu bandeja de spam por si nuestra respuesta cae ahí — y ve pensando
+    en el sistema que quieres que auditemos juntos.</p>
+    <a class="btn btn--gold" href="index.html">← Volver al sitio</a>
+  </main>
+</body>
+</html>

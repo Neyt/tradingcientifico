@@ -533,6 +533,116 @@ sup a:hover { color: var(--gold-bright); }
 .apply__alt a { color: var(--gold-bright); text-decoration: none; }
 .apply__alt a:hover { text-decoration: underline; }
 
+/* ---------- inversión / precios ---------- */
+.pricing {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+.price {
+  background: var(--ink-3);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 36px 30px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: border-color 0.25s, transform 0.25s;
+}
+.price:hover { border-color: var(--line-gold); transform: translateY(-4px); }
+.price--star {
+  border-color: var(--gold);
+  background: linear-gradient(180deg, rgba(201,168,76,0.08), var(--ink-3) 40%);
+  box-shadow: 0 30px 70px -30px rgba(201,168,76,0.35);
+}
+.price__badge {
+  position: absolute;
+  top: -13px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: #14110a;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.price__name {
+  color: var(--gold);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.price__amount {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4vw, 3.1rem);
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.price__cur { font-size: 0.9rem; color: var(--muted); vertical-align: super; margin-right: 6px; }
+.price__terms { font-size: 0.72rem; color: var(--muted); margin-bottom: 24px; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
+.price__list { list-style: none; display: grid; gap: 12px; margin-bottom: 30px; }
+.price__list li { padding-left: 24px; position: relative; color: var(--muted); font-size: 0.93rem; }
+.price__list li::before { content: "✓"; position: absolute; left: 0; color: var(--gold); font-weight: 600; }
+.price__cta { margin-top: auto; text-align: center; }
+.pricing__note {
+  margin-top: 36px;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+/* ---------- formulario de aplicación ---------- */
+.appform {
+  max-width: 880px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 22px;
+  background: rgba(11,14,20,0.92);
+  border: 1px solid var(--line-gold);
+  border-radius: 12px;
+  padding: 40px 38px;
+  box-shadow: 0 40px 90px -40px rgba(0,0,0,0.9);
+}
+.appform__field { display: flex; flex-direction: column; gap: 8px; }
+.appform__field--full { grid-column: 1 / -1; }
+.appform label {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.appform input,
+.appform select,
+.appform textarea {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--paper);
+  background: var(--ink-3);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 13px 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+.appform input::placeholder, .appform textarea::placeholder { color: rgba(152,145,127,0.55); }
+.appform select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--gold) 50%), linear-gradient(135deg, var(--gold) 50%, transparent 50%); background-position: calc(100% - 18px) 50%, calc(100% - 13px) 50%; background-size: 5px 5px; background-repeat: no-repeat; cursor: pointer; }
+.appform select:invalid { color: rgba(152,145,127,0.75); }
+.appform textarea { resize: vertical; min-height: 110px; }
+.appform input:focus, .appform select:focus, .appform textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201,168,76,0.15);
+}
+.appform__submit { width: 100%; border: none; cursor: pointer; font-family: var(--font-body); }
+.appform__honey { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+
 /* ---------- faq ---------- */
 .faq { display: grid; gap: 14px; }
 .faq details {
@@ -650,6 +760,8 @@ sup a:hover { color: var(--gold-bright); }
   .filters { grid-template-columns: repeat(2, 1fr); }
   .giants { grid-template-columns: repeat(2, 1fr); }
   .phases { grid-template-columns: repeat(2, 1fr); }
+  .pricing { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
+  .price--star { order: -1; }
 }
 @media (max-width: 880px) {
   .nav__links { display: none; }
@@ -665,6 +777,7 @@ sup a:hover { color: var(--gold-bright); }
   body { font-size: 16px; }
   .wrap { padding: 0 20px; }
   .hero { padding: 130px 0 72px; }
+  .appform { grid-template-columns: 1fr; padding: 28px 22px; }
   .giants { grid-template-columns: 1fr; }
   .phases { grid-template-columns: 1fr; }
   .hero__stats { grid-template-columns: repeat(2, 1fr); gap: 18px 20px; }

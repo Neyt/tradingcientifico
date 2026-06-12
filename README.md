@@ -21,11 +21,25 @@ assets/js/main.js       reveals, contadores, curva animada, CTA fijo móvil
 assets/img/             imágenes del sitio original (renombradas)
 ```
 
+## El formulario de aplicación (IMPORTANTE — activar 1 vez)
+
+Las aplicaciones se envían por **FormSubmit.co** a `info@neytrading.com` sin necesidad de backend.
+**La primera vez** que alguien envíe el formulario, FormSubmit mandará un correo de activación a
+`info@neytrading.com` — hay que hacer clic en **"Activate"** en ese correo (una sola vez). Hasta
+entonces los envíos no llegan. Recomendado: envía tú mismo una aplicación de prueba apenas puedas
+y activa el servicio.
+
+- Tras enviar, el visitante aterriza en `gracias.html`.
+- Si el sitio cambia de dominio, actualiza el campo oculto `_next` en el formulario de `index.html`.
+- Opcional (anti-spam): tras activar, FormSubmit te da un *hash* — puedes reemplazar
+  `formsubmit.co/info@neytrading.com` por `formsubmit.co/<hash>` para ocultar el email del HTML.
+
 ## Cosas que probablemente quieras cambiar
 
 | Qué | Dónde |
 |---|---|
-| **Destino del CTA "Aplicar"** (hoy: DM de Instagram) | Busca `instagram.com/ney.trading` en `index.html` y reemplaza por tu link de WhatsApp (`https://wa.me/521XXXXXXXXXX?text=Quiero%20aplicar`) o Calendly |
+| **Email que recibe aplicaciones** | Busca `info@neytrading.com` en `index.html` (action del form + mailto del footer) |
+| **Precios** ($1,997 / $4,997 / $9,997) | Sección `id="inversion"` en `index.html` + respuesta de la FAQ "¿Cuánto cuesta?" |
 | Textos de cualquier sección | `index.html` — el copy está en español, ordenado por secciones comentadas |
 | Colores / fuentes | Variables `:root` al inicio de `styles.css` |
 | Imagen de compartir (WhatsApp/redes) | `assets/img/og.jpg` (1200×630) |
