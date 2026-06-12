@@ -6,7 +6,15 @@
 
   /* ---- reveals al hacer scroll ---- */
   var revealed = document.querySelectorAll(".reveal");
-  if ("IntersectionObserver" in window && !reduced) {
+  function showAll() {
+    revealed.forEach(function (el) { el.classList.add("in"); });
+  }
+
+  if (location.hash) {
+    /* enlace directo a una sección (#programa, #inversion…):
+       sin animaciones de entrada — el contenido debe verse YA */
+    showAll();
+  } else if ("IntersectionObserver" in window && !reduced) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (e.isIntersecting) {
@@ -16,8 +24,18 @@
       });
     }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
     revealed.forEach(function (el) { io.observe(el); });
+    /* failsafe: si por cualquier razón el observer no disparó,
+       nada visible puede quedar oculto pasados 2.5 s */
+    setTimeout(function () {
+      revealed.forEach(function (el) {
+        if (!el.classList.contains("in") &&
+            el.getBoundingClientRect().top < window.innerHeight * 1.2) {
+          el.classList.add("in");
+        }
+      });
+    }, 2500);
   } else {
-    revealed.forEach(function (el) { el.classList.add("in"); });
+    showAll();
   }
 
   /* ---- dibujo de la curva de capital del hero ---- */
