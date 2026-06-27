@@ -476,6 +476,39 @@ sup a:hover { color: var(--gold-bright); }
 
 .team { margin-bottom: 88px; }
 .team__title { font-size: clamp(1.5rem, 2.6vw, 2rem); margin-bottom: 32px; }
+.team__title--sub { margin-top: 56px; font-size: clamp(1.25rem, 2vw, 1.6rem); color: var(--muted); }
+
+.founder {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 40px;
+  align-items: center;
+  background: var(--ink-3);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 40px;
+}
+.founder__photo { margin: 0; }
+.founder__photo img {
+  width: 100%; aspect-ratio: 1; object-fit: cover;
+  border-radius: 12px; border: 1px solid var(--line-gold);
+}
+.founder__photo--empty { position: relative; }
+.founder__photo--empty img { display: none; }
+.founder__photo--empty::before {
+  content: "Tu foto aquí\A 600×600";
+  white-space: pre;
+  display: grid; place-content: center; text-align: center;
+  aspect-ratio: 1; border-radius: 12px;
+  border: 1px dashed var(--line-gold);
+  color: var(--muted); font-family: var(--font-mono); font-size: 0.78rem;
+  background: var(--ink-2);
+}
+.founder__cap { margin-top: 12px; text-align: center; color: var(--gold); font-size: 0.74rem; }
+.founder__name { font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 8px 0 6px; }
+.founder__role { color: var(--gold); font-size: 0.78rem; margin-bottom: 18px; }
+.founder__story { color: var(--muted); margin-bottom: 14px; line-height: 1.6; }
+.founder__story strong { color: var(--paper); }
 .team__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .card--team h4 { font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 8px; }
 .team__tag { color: var(--gold); font-size: 0.75rem; margin-bottom: 14px; }
@@ -536,8 +569,8 @@ sup a:hover { color: var(--gold-bright); }
 /* ---------- inversión / precios ---------- */
 .pricing {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
   align-items: stretch;
 }
 .price {
@@ -577,9 +610,25 @@ sup a:hover { color: var(--gold-bright); }
   text-transform: uppercase;
   margin-bottom: 18px;
 }
+.price__outcome {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  line-height: 1.4;
+  color: var(--paper);
+  margin-bottom: 22px;
+  min-height: 4.2em;
+}
+.price__outcome em { color: var(--gold); font-style: italic; }
+.price--anchor { border-style: dashed; }
+.price--anchor:hover { border-color: var(--line-gold); }
+.price__badge--quiet {
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--line-gold);
+}
 .price__amount {
   font-family: var(--font-display);
-  font-size: clamp(2.4rem, 4vw, 3.1rem);
+  font-size: clamp(2.1rem, 3.4vw, 2.7rem);
   font-weight: 500;
   line-height: 1;
   margin-bottom: 8px;
@@ -760,7 +809,10 @@ sup a:hover { color: var(--gold-bright); }
   .filters { grid-template-columns: repeat(2, 1fr); }
   .giants { grid-template-columns: repeat(2, 1fr); }
   .phases { grid-template-columns: repeat(2, 1fr); }
-  .pricing { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
+  .pricing { grid-template-columns: repeat(2, 1fr); max-width: 720px; margin: 0 auto; }
+}
+@media (max-width: 600px) {
+  .pricing { grid-template-columns: 1fr; max-width: 560px; }
   .price--star { order: -1; }
 }
 @media (max-width: 880px) {
@@ -769,6 +821,9 @@ sup a:hover { color: var(--gold-bright); }
   .cards3 { grid-template-columns: 1fr; }
   .whofor { grid-template-columns: 1fr; }
   .team__grid { grid-template-columns: 1fr; }
+  .founder { grid-template-columns: 1fr; gap: 28px; padding: 32px 28px; text-align: center; }
+  .founder__photo { max-width: 240px; margin: 0 auto; }
+  .founder__story { text-align: left; }
   .steps { grid-template-columns: 1fr; }
   .bigstat { grid-template-columns: 1fr; gap: 18px; padding: 32px 28px; }
   .section { padding: 84px 0; }
