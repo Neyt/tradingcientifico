@@ -1,0 +1,33 @@
+/* ============================================================
+   landing.css — estilos compartidos para landers de campaña
+   (se cargan DESPUÉS de styles.css; reutilizan sus variables)
+   ============================================================ */
+.lp { min-height: 100vh; position: relative; overflow: hidden; }
+.lp__bg {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(7,9,13,0.82), rgba(7,9,13,0.96)),
+              url("../assets/img/bg-ciudad.jpg") center/cover no-repeat;
+}
+.lp__inner { position: relative; max-width: 940px; margin: 0 auto; padding: 56px 24px 80px; }
+.lp__logo { height: 48px; width: auto; margin-bottom: 48px; }
+.lp__title { font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1.04; margin-bottom: 24px; }
+.lp__sub { color: var(--muted); font-size: 1.15rem; max-width: 60ch; margin-bottom: 40px; }
+.lp__sub strong { color: var(--paper); }
+
+.lp__proof { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 44px 0; padding: 0; }
+.lp__proof li { list-style: none; background: var(--ink-3); border: 1px solid var(--line); border-radius: 12px; padding: 22px; }
+.lp__proof .n { font-family: var(--font-display); font-size: 2.1rem; color: var(--gold); display: block; margin-bottom: 6px; }
+.lp__proof .t { color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+
+.lpform { background: var(--ink-3); border: 1px solid var(--line-gold); border-radius: 14px; padding: 32px; max-width: 560px; }
+.lpform h2 { font-size: 1.5rem; margin-bottom: 8px; }
+.lpform p.note { color: var(--muted); font-size: 0.9rem; margin-bottom: 22px; }
+.lpform label { display: block; font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin: 14px 0 6px; }
+.lpform input, .lpform select { width: 100%; background: var(--ink-2); border: 1px solid var(--line); border-radius: 8px; padding: 13px 14px; color: var(--paper); font-family: var(--font-body); font-size: 1rem; }
+.lpform input:focus, .lpform select:focus { outline: none; border-color: var(--gold); }
+.lpform .btn { width: 100%; margin-top: 24px; }
+.lpform .honey { position: absolute; left: -9999px; }
+
+.lp__legal { color: var(--muted); font-size: 0.72rem; margin-top: 40px; max-width: 70ch; line-height: 1.6; }
+
+@media (max-width: 640px) { .lp__proof { grid-template-columns: 1fr; } }
