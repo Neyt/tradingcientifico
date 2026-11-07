@@ -790,3 +790,4 @@ sup a:hover { color: var(--gold-bright); }
 /* consentimiento de datos del formulario */
 .appform__consent label{display:flex;gap:.6rem;align-items:flex-start;text-transform:none;letter-spacing:0;font-size:.85rem;line-height:1.5}
 .appform__consent input{margin-top:.25rem;flex:0 0 auto;width:auto}
+.pricing--single{grid-template-columns:minmax(0,520px);justify-content:center}
