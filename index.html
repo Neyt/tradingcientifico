@@ -49,6 +49,7 @@
       <div class="hero__copy">
         <p class="kicker reveal">Mentoría basada en evidencia · Latinoamérica</p>
         <h1 class="hero__title reveal d1">¿Le ganarías a Kullamägi<br><em>en 10 trades?</em></h1>
+        <p class="hero__sub reveal d1"><strong>Tú contra uno de los traders más famosos del mundo.</strong> 10 gráficos reales: compras, apuestas en contra o pasas. Al final ves tu marcador: tú __/10.</p>
         <p class="hero__sub reveal d2">
           El 97% de los day traders persistentes pierde dinero. En 12 semanas te enseñamos a
           <strong>detectar el backtest que te iba a hacer perder plata, antes de arriesgarla</strong>.
@@ -67,7 +68,7 @@
       </div>
       <figure class="hero__chart reveal d2" aria-label="Curva de capital ilustrativa de un sistema sistemático">
         <div class="panel">
-          <div class="panel__bar mono"><span class="dot"></span><span class="dot"></span><span class="dot"></span> sistema_04.bt · 2016–2025</div>
+          <div class="panel__bar mono"><span class="dot"></span><span class="dot"></span><span class="dot"></span> curva_ilustrativa · 2016–2025</div>
           <svg viewBox="0 0 560 330" class="chart" role="img" aria-hidden="true">
             <!-- grid -->
             <g class="chart__grid">
@@ -101,17 +102,14 @@
   <section class="section" id="simulador">
     <div class="wrap">
       <header class="sec-head reveal">
-        <p class="sec-num mono">Simulador · Práctica deliberada</p>
-        <h2>¿Le ganas al <em>azar</em>?</h2>
-        <p class="sec-lead">Nuevo: decide lo que decidió Kristjan Kullamägi en 10 de sus trades reales de 2020. Ves el gráfico del día anterior, eliges comprar, ponerte corto o pasar, y al final sabes cuántas veces coincidiste con él.</p>
-        <p class="sec-lead">400 rupturas reales de acciones de EE. UU. (2022–2026). Ves el gráfico hasta el día de la ruptura, con su ADR, su volumen y las medias de 10 y 20 días, y decides si compras o pasas. El resultado sale de las reglas de salida de Kullamägi: stop a ½ ADR, venta de 1/3 al cierre del día 3, stop a la entrada y el resto al primer cierre bajo la media de 10 días. Todo medido en R y comparado con comprar al azar.</p>
+        <p class="sec-num mono">Simulador · Gratis</p>
+        <h2>Tú contra <em>Kullamägi</em></h2>
+        <p class="sec-lead">Ves el gráfico del día anterior de uno de sus trades reales de 2020. Decides: comprar, apostar en contra o pasar. Diez rondas. Al final sabes cuántas veces pensaste como él.</p>
       </header>
       <p class="reveal" style="display:flex;flex-wrap:wrap;gap:12px">
-        <a class="btn btn--gold" href="https://azar.tradingcientifico.com/#kulla">Juega 10 trades de Kullamägi gratis</a>
-        <a class="btn btn--ghost" href="https://azar.tradingcientifico.com/#demo">Probar la demo de rupturas</a>
-        <a class="btn btn--ghost" href="https://azar.tradingcientifico.com/#alumnos">Entrar como alumno</a>
+        <a class="btn btn--gold" href="https://azar.tradingcientifico.com/#kulla">Jugar ahora →</a>
       </p>
-      <p class="giants__legal mono reveal">Comprando las 400 sin criterio, el promedio fue −1,04R por trade y solo 16,5% ganaron. El simulador completo viene incluido en el programa. Resultados históricos simulados con datos diarios de Financial Modeling Prep; no son recomendación de inversión.</p>
+      <p class="giants__legal mono reveal">Dato real: comprando 400 rupturas de 2022–2026 sin criterio, solo 16,5% ganaron y el promedio fue perder 1,04 veces lo arriesgado por trade. Datos diarios de Financial Modeling Prep; no es recomendación de inversión.</p>
     </div>
   </section>
 
@@ -223,24 +221,24 @@
     <div class="wrap">
       <header class="sec-head reveal">
         <p class="sec-num mono">§ 03 · Seis autopsias</p>
-        <h2>Seis sistemas que parecían ganadores. <em>Seis autopsias.</em></h2>
+        <h2>Seis backtests que parecían ganadores. <em>Seis autopsias.</em></h2>
         <p class="sec-lead">Los probamos nosotros, con código y datos reales. Los seis tenían un error que los hacía ver
         mejor de lo que eran. <strong>En la mentoría aprendes a encontrar cada uno.</strong></p>
       </header>
 
       <div class="table-scroll reveal">
         <table class="systable">
-          <caption class="mono">Tabla 1 — Seis autopsias de nuestro propio laboratorio. Sharpe: retorno por unidad de riesgo (0,5 o más es bueno).</caption>
+          <caption class="mono">Tabla 1 — Seis autopsias de nuestro propio laboratorio. Criterio para aprobar: Sharpe neto ≥ 0,5 y Sharpe deflactado ≥ 95% (descuenta todas las variantes probadas).<sup><a href="#ref-2">2</a></sup></caption>
           <thead>
             <tr><th class="mono">#</th><th>Sistema</th><th>El error</th><th>Lo que quedó</th></tr>
           </thead>
           <tbody>
-            <tr><td class="mono">01</td><td>Magic Formula</td><td>El código compraba las <em>peores</em> acciones, usaba datos que todavía no existían y solo empresas que sobrevivieron</td><td><span class="tag tag--warn">Refutado</span> corregido, no le gana a comprar todas por igual</td></tr>
-            <tr><td class="mono">02</td><td>Piotroski F-Score</td><td>Usaba la lista de acciones de 2020 para operar desde 2002 (solo sobrevivientes) y datos del futuro</td><td><span class="tag tag--warn">Refutado</span> Sharpe 0,43; 10% de probabilidad de que no sea suerte</td></tr>
+            <tr><td class="mono">01</td><td>Magic Formula<sup><a href="#ref-15">15</a></sup></td><td>El código compraba las <em>peores</em> acciones, usaba datos que todavía no existían y solo empresas que sobrevivieron</td><td><span class="tag tag--warn">Refutado</span> corregido, no le gana a comprar todas por igual</td></tr>
+            <tr><td class="mono">02</td><td>Piotroski F-Score<sup><a href="#ref-14">14</a></sup></td><td>Usaba la lista de acciones de 2020 para operar desde 2002 (solo sobrevivientes) y datos del futuro</td><td><span class="tag tag--warn">Refutado</span> Sharpe 0,43; Sharpe deflactado 10% (se exige 95%)</td></tr>
             <tr><td class="mono">03</td><td>Cartera con volatilidad objetivo</td><td>Ajustar el riesgo no crea ganancia</td><td><span class="tag tag--warn">Refutado</span> ninguna versión le ganó a la cartera equiponderada (9,4% anual)</td></tr>
             <tr><td class="mono">04</td><td>Prueba de costos</td><td>El costo estaba en dólares por acción y se leía como puntos básicos</td><td><span class="tag tag--warn">Inválida</span> tres corridas «probaron» robustez sin probar nada</td></tr>
-            <tr><td class="mono">05</td><td>Reproducibilidad</td><td>Mismos parámetros, distinta versión del motor y de los datos</td><td><span class="tag tag--warn">Inválida</span> retorno anual entre −33% y +38%</td></tr>
-            <tr><td class="mono">06</td><td>Momentum 12-1</td><td>Parecía Sharpe 0,50 con 99% de confianza. <strong>Un solo día con un dato roto</strong> (+111,6% el 5-may-2020) inflaba todo</td><td><span class="tag tag--warn">Refutado</span> sin ese día: 10% anual y Sharpe 0,44. Contando las 120 variantes probadas, 28% de probabilidad de que no sea suerte. Caída máxima −68%</td></tr>
+            <tr><td class="mono">05</td><td>Reproducibilidad</td><td>Momentum: mismos parámetros, distinta versión del motor y de los datos</td><td><span class="tag tag--warn">Inválida</span> retorno anual entre −33% y +38%</td></tr>
+            <tr><td class="mono">06</td><td>Momentum 12-1</td><td>Parecía Sharpe 0,50, con 99% de probabilidad de ser mayor que cero sin contar las demás pruebas. <strong>Un solo día con un dato roto</strong> (+111,6% el 5-may-2020) inflaba todo</td><td><span class="tag tag--warn">Refutado</span> sin ese día: 10% anual y Sharpe 0,44. Contando las 120 variantes probadas, Sharpe deflactado 28% (se exige 95%). Caída máxima −68%</td></tr>
           </tbody>
         </table>
       </div>
@@ -343,7 +341,7 @@
           <article class="card card--team reveal">
             <h4>Ney Torres — fundador</h4>
             <p class="mono team__tag">Managing Partner · Value Investment Fund</p>
-            <p>Licenciado en Finanzas y Administración de Empresas, con dos maestrías. Dirige el laboratorio cuantitativo donde se auditan los sistemas del programa, incluidos los que fallan. <a href="https://www.linkedin.com/in/neytorres">LinkedIn</a></p>
+            <p>Licenciado en Finanzas y Administración de Empresas. Dirige el laboratorio cuantitativo donde se auditan los sistemas del programa, incluidos los que fallan. <a href="https://www.linkedin.com/in/neytorres">LinkedIn</a></p>
           </article>
           <article class="card card--team reveal d1">
             <h4>Científico de Datos Senior</h4>
@@ -403,7 +401,7 @@
         </article>
       </div>
 
-      <p class="pricing__note mono reveal">Inscripciones del 12 al 16 de enero de 2027. Planes de pago en cuotas disponibles — se acuerdan en la llamada.
+      <p class="pricing__note mono reveal">Aplica hoy para tu llamada; las plazas se confirman con el pago del 12 al 16 de enero de 2027. Planes de pago en cuotas disponibles — se acuerdan en la llamada.
       Garantía de 14 días: si tras tu primera sesión decides que esto no es para ti y lo pides dentro de los 14 días posteriores a tu pago, te devolvemos el 100%.</p>
     </div>
   </section>
@@ -473,7 +471,8 @@
             <option>Menos de $1,000 USD</option>
             <option>$1,000 – $5,000 USD</option>
             <option>$5,000 – $25,000 USD</option>
-            <option>Más de $25,000 USD</option>
+            <option>$25,000 – $50,000 USD</option>
+            <option>Más de $50,000 USD</option>
           </select>
         </div>
         <div class="appform__field">
@@ -566,6 +565,8 @@
         <li id="ref-11">Frazzini, A. &amp; Pedersen, L. H. (2014). <em>Betting Against Beta.</em> Journal of Financial Economics, 111(1).</li>
         <li id="ref-12">Lakonishok, J. &amp; Smidt, S. (1988). <em>Are Seasonal Anomalies Real? A Ninety-Year Perspective.</em> Review of Financial Studies, 1(4).</li>
         <li id="ref-13">Simon, D. &amp; Campasano, J. (2014). <em>The VIX Futures Basis: Evidence and Trading Strategies.</em> Journal of Derivatives, 21(3).</li>
+        <li id="ref-14">Piotroski, J. (2000). <em>Value Investing: The Use of Historical Financial Statement Information to Separate Winners from Losers.</em> Journal of Accounting Research, 38.</li>
+        <li id="ref-15">Greenblatt, J. (2005). <em>The Little Book That Beats the Market.</em> Wiley.</li>
       </ol>
     </div>
   </section>
@@ -594,7 +595,7 @@
 
   <!-- Sticky CTA móvil -->
   <div class="stickycta" id="stickycta" aria-hidden="true">
-    <a class="btn btn--gold" href="#aplicar">Aplicar a la mentoría</a>
+    <a class="btn btn--gold" href="#aplicar">Aplicar a la beta</a>
   </div>
 
   <script src="assets/js/main.js" defer></script>
