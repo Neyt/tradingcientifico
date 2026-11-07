@@ -69,7 +69,7 @@
           cio.unobserve(e.target);
         }
       });
-    }, { threshold: 0.6 });
+    }, { threshold: 0.2 });
     counters.forEach(function (el) { cio.observe(el); });
   } else {
     counters.forEach(animateCount);
